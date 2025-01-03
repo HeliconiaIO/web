@@ -7,11 +7,10 @@
         t-inherit="web.ImageField"
         t-inherit-mode="extension"
     >
-        <xpath expr="//FileUploader/../.." position="after">
+        <xpath expr="//button[hasclass('o_select_file_button')]" position="before">
             <div
-                t-attf-class="position-absolute top-0 opacity-0 opacity-100-hover {{isMobile ? 'o_mobile_controls' : ''}}"
-                aria-atomic="true"
-                t-att-style="sizeStyle"
+                class="position-absolute"
+                t-att-style="'transform: translate(0, -55px); left: 0px; z-index: 10;'"
             >
                 <button
                     t-if="props.record.data[props.name] and state.isValid"
